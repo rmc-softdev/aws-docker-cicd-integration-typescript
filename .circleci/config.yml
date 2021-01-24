@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/latest
+      - image: circleci/13.12.0
     working_directory: ~/repo
     steps:
       - checkout
@@ -34,7 +34,7 @@ jobs:
           name: Installing AWS CLI
           working_directory: /
           command: ｜
-            sudo apt-get -y -qq update
+            sudo apt update && apt install -y build-essential
             sudo apt-get install -y awscli
             sudo apt-get install -y python-pip python-dev build-essential
       - run: 
