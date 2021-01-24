@@ -97,6 +97,7 @@ jobs:
             fi           
 
   workflows:
+    description:
       jobs:
         - build
         - deploy-to-aws-s3:
