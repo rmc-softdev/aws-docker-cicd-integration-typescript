@@ -2,7 +2,7 @@ version: 2.1
 executors:
   app-executor:
     docker:
-      - image: circleci/node:carbon
+      - image: circleci/node:15.5.0
     working_directory: ~/repo
 
 aliases:
@@ -57,6 +57,8 @@ jobs:
     executor: app-executor
     steps:
       - checkout
+      - attach_workspace:
+          at: ./
       - *show-current-branch-name
       - *install-aws-cli
       - *build-project
