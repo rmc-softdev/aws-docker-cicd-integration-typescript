@@ -83,7 +83,7 @@ jobs:
             zip ../build.zip -r * .[^.]*
             echo "Build successfully"
       - run:
-          name: Deploy to AWS S3
+          name: Deploy to AWS Cloudfront
           command: |
             aws configure set preview.cloudfront true
             if [ "${CIRCLE_BRANCH}" == "master" ]
