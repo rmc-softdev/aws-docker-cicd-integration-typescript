@@ -12,18 +12,20 @@ aliases:
       command: echo ${CIRCLE_BRANCH}
   - &restore-cache
     restore_cache:
-      keys: 
-        - app-{{checksum "package.json"}}
+      keys:
+        - app-{{ checksum "package.json" }}
         - app-
   - &install-dependencies
     run:
       name: Install dependencies
-      command: npm install
+      command: |
+        mkdir -p artifacts
+        npm install
   - &save-cache
-    save_cache: 
+    save_cache:
       paths:
         - node_modules
-      key: app-{{checksum "package.json"}}
+      key: app-{{ checksum "package.json" }}
   - &install-aws-cli
     run:
       name: Installing AWS CLI
@@ -33,14 +35,14 @@ aliases:
         sudo apt-get install -y awscli
         sudo apt-get install -y python-pip python-dev build-essential
   - &build-project
-    run: 
+    run:
       name: Build Project
       command: |
         npm install
         npm run build
         cd build
         zip ../build.zip -r * .[^.]*
-        echo "Build successfully"
+        echo "Build successful"
   
 jobs:
   build:
