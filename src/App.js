@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-const App = () =>  {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -14,11 +14,11 @@ const App = () =>  {
           target="_blank"
           rel="noopener noreferrer"
         >
-          IT'S WORKING!! HORAAAY
+          ITS WORKING!! HORAAAAY
         </a>
       </header>
     </div>
   );
-}
+};
 
 export default App;
