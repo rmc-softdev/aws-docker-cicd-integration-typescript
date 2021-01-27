@@ -158,7 +158,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Author*:\n$CIRCLE_PROJECT_USERNAME"
+                      "text": "*GithubUsername*:\n$CIRCLE_PROJECT_USERNAME"
                     }
                   ]
                 },
