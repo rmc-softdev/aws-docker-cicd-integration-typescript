@@ -319,13 +319,13 @@ workflows:
                 - development
                 - staging
                 - master
-      - hold:
+      - hold-tfdestroy:
           type: approval
           requires:
             - deploy-to-aws-cloudfront
       - terraform-destroy:
           requires:
-            - hold
+            - hold-tfdestroy
           filters:
             branches:
               only:
