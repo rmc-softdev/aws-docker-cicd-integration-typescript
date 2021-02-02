@@ -1,14 +1,14 @@
 
 provider "aws" {
-  region     = "us-east-2"
+  region = "us-east-2"
 }
 
 terraform {
   backend "s3" {
-    bucket     = "aniworld-tf-state"
-    key        = "aniworld.tfstate"
-    region     = "us-east-2"
-    encrypt    = true
+    bucket  = "aniworld-tf-state"
+    key     = "aniworld.tfstate"
+    region  = "us-east-2"
+    encrypt = true
   }
 }
 
