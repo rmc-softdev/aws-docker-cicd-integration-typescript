@@ -121,7 +121,7 @@ jobs:
           name: Terraform applying
           command: |
             cd artifacts/infrastructure/
-            terraform apply --auto-aprove                      
+            terraform apply -auto-approve                      
             terraform output aniworld_app_s3_bucket > ../aniworld_bucket_name.txt
             terraform output cloudfront_distribution_id > ../cloudfront_distribution_id.txt
       - persist_to_workspace:
@@ -248,7 +248,7 @@ jobs:
             cd infrastructure/
             terraform init
             terraform workspace select ${CIRCLE_BRANCH} || terraform workspace new ${CIRCLE_BRANCH}
-            terraform destroy --auto-aprove
+            terraform destroy -auto-aprove
 
 
 workflows:
