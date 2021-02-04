@@ -1,47 +1,20 @@
 {
-  "name": "integrations",
+  "name": "aniworld",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.3",
-    "@testing-library/user-event": "^12.6.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "lint": "eslint src/**/*.js*",
-    "prettier:check": "prettier --check src/**/*.{js,jsx,json}",
-    "prettier:write": "prettier --write src/**/*.{js,jsx,json}",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "next": "10.0.6",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.18.0",
-    "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-react": "^7.22.0",
-    "prettier": "^2.2.1"
+    "@types/node": "^14.14.22",
+    "@types/react": "^17.0.1",
+    "typescript": "^4.1.3"
   }
 }
