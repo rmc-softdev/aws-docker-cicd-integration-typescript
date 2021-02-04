@@ -26,11 +26,6 @@ aliases:
       command: |
         mkdir -p artifacts
         npm install
-  - &save-cache
-    save_cache:
-      paths:
-        - node_modules
-      key: app-{{ checksum "package.json" }}
   - &install-aws-cli
     run:
       name: Installing AWS CLI
@@ -56,7 +51,6 @@ jobs:
       - checkout
       - *show-current-branch-name
       - *install-dependencies
-      - *save-cache
       - run:
           name: Copy Infrastructure Folder
           command: |
