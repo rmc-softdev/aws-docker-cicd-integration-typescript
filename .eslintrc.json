@@ -1,56 +1,35 @@
 {
-    "name": "cinema",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-      "@sentry/browser": "^5.15.4",
-      "@testing-library/jest-dom": "^4.2.4",
-      "@testing-library/react": "^9.3.2",
-      "@testing-library/user-event": "^7.1.2",
-      "axios": "^0.19.2",
-      "node-sass": "^4.13.1",
-      "react": "^16.13.1",
-      "react-dom": "^16.13.1",
-      "react-redux": "^7.2.0",
-      "react-router-dom": "^5.1.2",
-      "react-scripts": "3.4.1",
-      "redux": "^4.0.5",
-      "redux-devtools-extension": "^2.13.8",
-      "redux-thunk": "^2.3.0",
-      "uuid": "^7.0.3"
+    "env": {
+        "browser": true,
+        "es6": true
     },
-    "scripts": {
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-      "lint": "eslint 'src/**/*.js*'",
-      "prettier:check": "prettier --check 'src/**/*.{js,jsx,json}'",
-      "prettier:write": "prettier --write 'src/**/*.{js,jsx,json}'",
-      "test": "react-scripts test",
-      "eject": "react-scripts eject"
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
     },
-    "eslintConfig": {
-      "extends": "react-app"
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
     },
-    "browserslist": {
-      "production": [
-        ">0.2%",
-        "not dead",
-        "not op_mini all"
-      ],
-      "development": [
-        "last 1 chrome version",
-        "last 1 firefox version",
-        "last 1 safari version"
-      ]
+    "settings": {
+      "react": {
+        "version": "17.0"
+      }
     },
-    "devDependencies": {
-      "eslint": "^6.8.0",
-      "eslint-config-standard": "^14.1.1",
-      "eslint-plugin-import": "^2.20.2",
-      "eslint-plugin-node": "^11.1.0",
-      "eslint-plugin-promise": "^4.2.1",
-      "eslint-plugin-react": "^7.19.0",
-      "eslint-plugin-standard": "^4.0.1",
-      "prettier": "^2.0.4"
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "semi": [2, "always"],
+        "space-before-function-paren": [0, {"anonymous": "always", "named": "always"}],
+        "camelcase": 0,
+        "no-return-assign": 0,
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off"
     }
   }
+  
