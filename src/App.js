@@ -1,4 +1,3 @@
-
 import './App.css';
 const App = () => {
   return (
@@ -16,4 +15,3 @@ const App = () => {
 };
 
 export default App;
-
