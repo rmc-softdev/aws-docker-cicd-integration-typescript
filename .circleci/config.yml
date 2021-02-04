@@ -20,12 +20,22 @@ aliases:
     run:
       name: Show current branch
       command: echo ${CIRCLE_BRANCH}
+  - &restore-cache
+    restore_cache:
+      keys:
+        - app-{{ checksum "package.json" }}
+        - app-
   - &install-dependencies
     run:
       name: Install dependencies
       command: |
         mkdir -p artifacts
         npm install
+  - &save-cache
+    save_cache:
+      paths:
+        - node_modules
+      key: app-{{ checksum "package.json" }}
   - &install-aws-cli
     run:
       name: Installing AWS CLI
@@ -50,7 +60,9 @@ jobs:
     steps:
       - checkout
       - *show-current-branch-name
+      - *restore-cache
       - *install-dependencies
+      - *save-cache
       - run:
           name: Copy Infrastructure Folder
           command: |
@@ -65,6 +77,7 @@ jobs:
     steps:
       - checkout
       - *show-current-branch-name
+      - *restore-cache
       - run:
           name: Run linting
           command: npm run lint
@@ -73,6 +86,7 @@ jobs:
     steps:
       - checkout
       - *show-current-branch-name
+      - *restore-cache
       - run:
           name: Run prettier check
           command: npm run prettier:check
