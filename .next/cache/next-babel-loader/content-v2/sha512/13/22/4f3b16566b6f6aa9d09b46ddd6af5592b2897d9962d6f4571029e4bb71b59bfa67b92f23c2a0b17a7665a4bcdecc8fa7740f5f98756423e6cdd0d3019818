@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\n\n/* import styles from '../shared/styles/Home.module.css'\n */\nexport default function Home() {\n  return /*#__PURE__*/_jsx(\"h1\", {\n    children: \" jesus\"\n  });\n}","map":null,"metadata":{},"sourceType":"module"}
