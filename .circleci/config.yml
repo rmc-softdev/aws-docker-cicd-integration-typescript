@@ -4,7 +4,7 @@ version: 2.1
 executors:
   app-executor:
     docker:
-      - image: circleci/node:carbon
+      - image: circleci/node:stretch
     working_directory: ~/repo
   slack-executor:
     docker:
@@ -71,8 +71,7 @@ jobs:
           root: ./
           paths:
             - artifacts
-
-
+            
   prettier:
     executor: app-executor
     steps:
