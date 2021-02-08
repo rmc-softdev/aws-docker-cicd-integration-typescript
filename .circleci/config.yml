@@ -71,6 +71,15 @@ jobs:
           root: ./
           paths:
             - artifacts
+  linting:
+    executor: app-executor
+    steps:
+      - checkout
+      - *show-current-branch-name
+      - *restore-cache
+      - run:
+          name: Run linting
+          command: npm run lint            
             
   prettier:
     executor: app-executor
@@ -247,6 +256,15 @@ workflows:
   build_and_deploy:
     jobs:
       - build
+      - linting:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - develop
+                - staging
+                - master      
       - prettier:
           requires:
             - build
@@ -258,6 +276,7 @@ workflows:
                 - master
       - terraform-validate:
           requires:
+            - linting
             - prettier
           filters:
             branches:
