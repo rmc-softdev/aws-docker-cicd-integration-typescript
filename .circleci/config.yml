@@ -262,7 +262,7 @@ workflows:
           filters:
             branches:
               only:
-                - develop
+                - development
                 - staging
                 - master      
       - prettier:
